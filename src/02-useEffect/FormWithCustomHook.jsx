@@ -27,8 +27,8 @@ export const FormWithCustomHook = () => {
 
             <input
                 type="Email"
-                className="form-control"
-                placeholder="Email"
+                className="form-control mt-2"
+                placeholder="joen@google.com"
                 name="email"
                 value={email}
                 onChange={onInputChange}

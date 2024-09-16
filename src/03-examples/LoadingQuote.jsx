@@ -1,12 +1,9 @@
 
+
 export const LoadingQuote = () => {
     return (
-  <section style={{ height: 200 }}
-     className="alert alert-info text-center p-0 m-0 d-flex align-items-center justify-content-center "
-
-
-  >
-
-  </section>
+        <div className="alert alert-info text-center">
+            Loading...
+        </div>
     )
 }

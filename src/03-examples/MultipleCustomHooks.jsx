@@ -1,54 +1,31 @@
 
 
-import {useCounter, useFetch} from "../hooks/index.js";
-import {LoadingQuote} from "./LoadingQuote.jsx";
-import {PokemonCard} from "./PokemonCard.jsx";
+import { useCounter, useFetch } from '../hooks';
+import { LoadingQuote, Quote } from './';
+
 
 export const MultipleCustomHooks = () => {
 
-
-
-    const { counter, decrement, increment} = useCounter(1)
-    const {data, hasError, isLoading    } = useFetch(`https://pokeapi.co/api/v2/pokemon/${counter}'`)
+    const { counter, increment } = useCounter(1);
+    const { data, isLoading, hasError } = useFetch(`https://www.breakingbadapi.com/api/quotes/${ counter }`);
+    const { author, quote } = !!data && data[0];
 
     return (
         <>
-            <h1>Información de Pokemon</h1>
-            <hr/>
+            <h1>BreakingBad Quotes</h1>
+            <hr />
 
             {
                 isLoading
-                ? <LoadingQuote/>
-                : (
-                        <PokemonCard
-                        id ={counter}
-                        name={data.name}
-                        sprites={[
-                        data.sprites.front_default,
-                            data.sprites.front_shiny,
-                            data.sprites.back_default,
-                            data.sprites.back_shiny,
-                        ]}
-                        />
-                    )
+                    ? <LoadingQuote />
+                    : <Quote author={ author } quote={ quote } />
             }
 
-
-
-
             <button
-                className="btn btn-primary mt-2"
-                onClick={ () => counter > 1 ? decrement(): null }
-            >
-                Anterior
-
-            </button>
-            <button
-                className="btn btn-primary mt-2"
-                onClick={ () => increment()}
-
-            >
-                Siguiente
+                className="btn btn-primary"
+                disabled={ isLoading }
+                onClick={ () => increment() }>
+                Next quote
             </button>
 
         </>

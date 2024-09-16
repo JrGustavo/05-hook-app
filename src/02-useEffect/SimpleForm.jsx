@@ -20,17 +20,17 @@ export const SimpleForm = () => {
     }
 
     useEffect(() => {
-        console.log('useEffect called!')
+        //console.log('useEffect called!')
 
     }, [formState]);
 
     useEffect(() => {
-        console.log('formState changed!')
+        //console.log('formState changed!')
 
     }, []);
 
     useEffect(() => {
-        console.log('email changed!')
+        //console.log('email changed!')
 
     }, [email]);
 
@@ -60,8 +60,7 @@ export const SimpleForm = () => {
             />
 
             {
-               <Message className="hidden" />
-
+                (username === 'Jr1' ) && <Message />
             }
 
 
