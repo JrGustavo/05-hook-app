@@ -1,11 +1,11 @@
-import React from 'react'
-import { createRoot } from 'react-dom/client'
-
+import React from 'react';
+import ReactDOM from 'react-dom/client'
+import {TodoApp } from "./08-useReducer/TodoApp.jsx";
 import './index.css'
-import {CallBackHook} from "./06-memos/CallBackHook.jsx";
 
-createRoot(document.getElementById('root')).render(
-  <React.StrictMode>
-      <CallBackHook/>
- </React.StrictMode>,
+ReactDOM.createRoot(document.getElementById('root')).render(
+    <React.StrictMode>
+        <TodoApp/>
+    </React.StrictMode>
 )
+

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Hijo } from './Hijo'
 import { useState } from 'react';
 
