@@ -8,8 +8,6 @@ const initialState = [{
 
 const todoReducer = ( state = initialState, action = {} ) => {
 
-
-
     if (action.type === '[TODO] add todo') {
         return [...state, action.payload];
     }
