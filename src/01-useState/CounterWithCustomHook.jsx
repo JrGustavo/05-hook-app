@@ -1,4 +1,4 @@
-import {useCounter} from "../hooks/useCounter.js";
+import {useCounter} from "../10-mis-custom-hooks/useCounter.js";
 
 export const CounterWithCustomHook = () => {
 
